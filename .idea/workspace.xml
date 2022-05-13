@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82681beb-71a8-4a53-948f-6fe6e7212791" name="Changes" comment="lunch bot">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="82681beb-71a8-4a53-948f-6fe6e7212791" name="Changes" comment="lunch bot" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +68,7 @@
       <workItem from="1652088799334" duration="15841000" />
       <workItem from="1652278831025" duration="641000" />
       <workItem from="1652312621527" duration="598000" />
-      <workItem from="1652434854582" duration="5214000" />
+      <workItem from="1652434854582" duration="5518000" />
     </task>
     <task id="LOCAL-00001" summary="lunch bot">
       <created>1652437042929</created>
