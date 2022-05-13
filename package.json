@@ -1,0 +1,25 @@
+{
+  "name": "albiom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "discord.js": "^12.5.1",
+    "node-fetch": "^2.6.7",
+    "webshot-node": "^0.18.2",
+    "xhr2": "^0.2.1"
+  },
+  "keywords": [
+    "heroku",
+    "discord.js"
+  ],
+  "author": "nima amr",
+  "license": "ISC",
+  "devDependencies": {
+    "discord-buttons": "^4.0.0-deprecated"
+  }
+}
