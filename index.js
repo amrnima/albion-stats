@@ -3,8 +3,8 @@ const { Client, Intents } = require('discord.js');
 const { MessageButton } = require('discord-buttons');
 const button = require('discord-buttons');
 const fetch = require('node-fetch');
-const prefix = '#';
-const token = 'OTcwNjIxMjE5NzA1NjA2Mjk0.Ggmalx.ueekFk6c7VLDSGTbnwKWhfJizTCh5L-XMpQK7c';
+const prefix = process.env.prefix;
+const token = process.env.token;
 const userSearch = 'https://gameinfo.albiononline.com/api/gameinfo/search?q=';
 const player = 'https://gameinfo.albiononline.com/api/gameinfo/players/'
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES] });
