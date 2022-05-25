@@ -40,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Project/discordBot/olbion",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Project/discordBot/olbion&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Project\discordBot\olbion" />
@@ -75,7 +75,8 @@
       <workItem from="1652312621527" duration="598000" />
       <workItem from="1652434854582" duration="6251000" />
       <workItem from="1652515946827" duration="64000" />
-      <workItem from="1653444622551" duration="1980000" />
+      <workItem from="1653444622551" duration="2237000" />
+      <workItem from="1653446997646" duration="326000" />
     </task>
     <task id="LOCAL-00001" summary="lunch bot">
       <created>1652437042929</created>
@@ -112,7 +113,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652440970330</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lunch bot">
+      <created>1653446731332</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653446731332</updated>
+    </task>
+    <task id="LOCAL-00007" summary="lunch bot">
+      <created>1653446760619</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653446760619</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

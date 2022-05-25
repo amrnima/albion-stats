@@ -3,8 +3,8 @@ const { Client, Intents } = require('discord.js');
 const { MessageButton } = require('discord-buttons');
 const button = require('discord-buttons');
 const fetch = require('node-fetch');
-const prefix = process.env.prefix;
-const token = process.env.token;
+const prefix = '#';
+const token = 'OTcwNjIxMjE5NzA1NjA2Mjk0.Ggmalx.ueekFk6c7VLDSGTbnwKWhfJizTCh5L-XMpQK7c';
 const userSearch = 'https://gameinfo.albiononline.com/api/gameinfo/search?q=';
 const player = 'https://gameinfo.albiononline.com/api/gameinfo/players/'
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES] });
@@ -40,100 +40,105 @@ async function getInfo(message, cmd) {
     const data = await response.json();
     dataVal = data;
     let error = false;
-    for (let i =0; i < data.players.length; i++) {
-        if (data.players && data.players[i].Name === cmd) {
-            error = true;
-            let res = await fetch(player + data.players[0].Id);
-            let subData = await res.json();
-            const Embed = {
-                color: 0x0099ff,
-                title: data.players[0].Name,
-                url: 'https://cdn.discordapp.com/icons/913117744252203039/ee766598fbfabd53d486a2e633420e07.webp?size=128',
-                author: {
-                    name: 'X-RAY stats finder',
-                },
-                fields: [
-                    {
-                        name: 'Guild Name:',
-                        value: subData.GuildName? subData.GuildName: 'no Guild',
-                        inline: true,
+    if (data.players.length >= 1) {
+        for (let i =0; i < data.players.length; i++) {
+            if (data.players && data.players[i].Name === cmd) {
+                error = true;
+                let res = await fetch(player + data.players[0].Id);
+                let subData = await res.json();
+                const Embed = {
+                    color: 0x0099ff,
+                    title: data.players[0].Name,
+                    url: 'https://cdn.discordapp.com/icons/913117744252203039/ee766598fbfabd53d486a2e633420e07.webp?size=128',
+                    author: {
+                        name: 'X-RAY stats finder',
                     },
-                    {
-                        name: 'Alliance Name:',
-                        value: subData.AllianceName? subData.AllianceName : 'no Alliance',
-                        inline: true,
+                    fields: [
+                        {
+                            name: 'Guild Name:',
+                            value: subData.GuildName? subData.GuildName: 'no Guild',
+                            inline: true,
+                        },
+                        {
+                            name: 'Alliance Name:',
+                            value: subData.AllianceName? subData.AllianceName : 'no Alliance',
+                            inline: true,
+                        },
+                        {
+                            name: 'PvP Fame:',
+                            value: Format(subData.KillFame),
+                            inline: true,
+                        },
+                        {
+                            name: 'Death Fame:',
+                            value: Format(subData.DeathFame),
+                            inline: true,
+                        },
+                        {
+                            name: 'PvE Fame:',
+                            value: Format(subData.LifetimeStatistics.PvE.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Crafting Fame:',
+                            value: Format(subData.LifetimeStatistics.Crafting.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Gathering total Fame:',
+                            value: Format(subData.LifetimeStatistics.Gathering.All.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Fiber Fame:',
+                            value: Format(subData.LifetimeStatistics.Gathering.Fiber.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Hide Fame:',
+                            value: Format(subData.LifetimeStatistics.Gathering.Hide.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Ore Fame:',
+                            value: Format(subData.LifetimeStatistics.Gathering.Ore.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Rock Fame:',
+                            value: Format(subData.LifetimeStatistics.Gathering.Rock.Total),
+                            inline: true,
+                        },
+                        {
+                            name: 'Wood Fame:',
+                            value: Format(subData.LifetimeStatistics.Gathering.Wood.Total),
+                            inline: true,
+                        },
+                    ],
+                    timestamp: new Date(),
+                    footer: {
+                        text: 'X-RAY FAMILY',
                     },
-                    {
-                        name: 'PvP Fame:',
-                        value: Format(subData.KillFame),
-                        inline: true,
-                    },
-                    {
-                        name: 'Death Fame:',
-                        value: Format(subData.DeathFame),
-                        inline: true,
-                    },
-                    {
-                        name: 'PvE Fame:',
-                        value: Format(subData.LifetimeStatistics.PvE.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Crafting Fame:',
-                        value: Format(subData.LifetimeStatistics.Crafting.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Gathering total Fame:',
-                        value: Format(subData.LifetimeStatistics.Gathering.All.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Fiber Fame:',
-                        value: Format(subData.LifetimeStatistics.Gathering.Fiber.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Hide Fame:',
-                        value: Format(subData.LifetimeStatistics.Gathering.Hide.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Ore Fame:',
-                        value: Format(subData.LifetimeStatistics.Gathering.Ore.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Rock Fame:',
-                        value: Format(subData.LifetimeStatistics.Gathering.Rock.Total),
-                        inline: true,
-                    },
-                    {
-                        name: 'Wood Fame:',
-                        value: Format(subData.LifetimeStatistics.Gathering.Wood.Total),
-                        inline: true,
-                    },
-                ],
-                timestamp: new Date(),
-                footer: {
-                    text: 'X-RAY FAMILY',
-                },
-            };
-            const killBtn = new MessageButton()
-                .setID("killId")
-                .setStyle("blurple")
-                .setLabel("kill bord");
-            const deathBtn = new MessageButton()
-                .setID("deathsId")
-                .setStyle("blurple")
-                .setLabel("death bord");
-            message.channel.send({embed: Embed, button: [killBtn, deathBtn]})
-            if (i === data.players.length - 1) {
-                error = false;
+                };
+                const killBtn = new MessageButton()
+                    .setID("killId")
+                    .setStyle("blurple")
+                    .setLabel("kill bord");
+                const deathBtn = new MessageButton()
+                    .setID("deathsId")
+                    .setStyle("blurple")
+                    .setLabel("death bord");
+                message.channel.send({embed: Embed, button: [killBtn, deathBtn]})
+                if (i === data.players.length - 1) {
+                    error = false;
+                }
             }
-        } else if(!error && i === data.players.length - 1) {
-            message.channel.send('character is not find with this name')
+            else if(!error && i === data.players.length - 1) {
+                message.channel.send('character is not find with this name')
+            }
         }
+    } else {
+        message.channel.send('character is not find with this name')
     }
 
 }
